@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
     <title>Encriptador de texto</title>
 </head>
 <body>
-    <textarea name="text" cols="30" rows="10" id="text">Inserta el texto aquí</textarea>
+    <header class="encabezado">
+        <div class="logo">
+            <img src="imagenes/logo-alura.png" alt="logo de alura">
+        </div>
+    </header>
+    <main class="cuerpo">
+        <div class="panel_izquierdo">
+            <div class="contenedor">
+                <textarea name="text" id="text" class="textoUsuario">Inserta el texto aquí</textarea>
+                <div class="info">
+                    <img src="imagenes/exclamacion.png" alt="simbolo" height="12px" width="12px">
+                    <p id="alerta">Solo letras minúsculas y sin acentos</p>
+                </div>
+            </div>
+            <div class="botones">
+                <button onclick="encriptar()" class="boton encriptar">Encriptar</button>
+                <button onclick="desencriptar()" class="boton desencriptar">Desencriptar</button>
+            </div>
+        </div>
+        <div class="panel_derecho">
+            <div id="elementos">
+                <img src="imagenes/imagen.png" alt="imagen-muneco" id="imagen">
+                <br>
+                <h1>Ningún mensaje fue<br>encontrado</h1>
+                <br>
+                <p>Ingresa el texto que desees encriptar o<br>desencriptar.</p>
+            </div>
+            <textarea name="text" id="enc" class="resultado" hidden>Inserta el texto aquí</textarea>
+            <div class="botones" id="mostrar" hidden>
+                <button onclick="copiar()" class="boton copiar" id="copia" hidden>Copiar</button>
+                <button onclick="limpiar()" class="boton limpiar" id="limpia" hidden>Limpiar</button>
+            </div>
+        </div>   
+    </main>
 
-    <textarea name="enc" cols="30" rows="10" id="enc" hidden></textarea>
-    <img src="imagenes/1.png" alt="Sin Mensaje" id="imagen">
-
-    <button onclick="encriptar()">Encriptar</button>
-    <button onclick="desencriptar()">Desencriptar</button>
-    <button onclick="limpiar()">Limpiar</button>
-    <button onclick="copiar()">Copiar</button>
+    <footer></footer>
+    
     <script src="app.js"></script>
 </body>
 </html>

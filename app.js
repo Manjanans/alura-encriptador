@@ -1,6 +1,5 @@
 function encriptar(){
     const textoUsuario = document.getElementById("text").value;
-    const resultado = document.getElementById("enc");
     
     if(!verificarMinusculas(textoUsuario)){
         alert("Inserta solo minúsculas.");
@@ -12,18 +11,17 @@ function encriptar(){
         .replaceAll("o", "ober")
         .replaceAll("u", "ufat");
     
-        resultado.value = textEnc;
-        mostrarTexto();
+        mostrarTexto(textEnc);
     }
 }
 
 function desencriptar(){
     const textoUsuario = document.getElementById("text").value;
-    const resultado = document.getElementById("enc");
 
     if(!verificarMinusculas(textoUsuario)){
         alert("Inserta solo minúsculas.");
     }else{
+        
         var textEnc = textoUsuario
         .replaceAll("enter", "e")
         .replaceAll("imes", "i")
@@ -31,8 +29,7 @@ function desencriptar(){
         .replaceAll("ober", "o")
         .replaceAll("ufat", "u");
 
-        resultado.value = textEnc;
-        mostrarTexto();
+        mostrarTexto(textEnc);
     }
 }
 
@@ -42,18 +39,27 @@ function verificarMinusculas(texto) {
 
 function limpiar(){
     const resultado = document.getElementById("enc");
-    const imagen = document.getElementById("imagen");
-    document.getElementById("text").value = "";
+    const imagen = document.querySelector("#elementos");
+    const copia = document.getElementById("copia");
+    const limpia = document.getElementById("limpia");
+    document.getElementById("text").value = "Inserta el texto aquí";
     resultado.value = "";
-    imagen.hidden = false;
+    imagen.style.display = "";
     resultado.hidden = true;
+    copia.hidden = true;
+    limpia.hidden = true;
 }
 
-function mostrarTexto(){
+function mostrarTexto(textEnc){
     const resultado = document.getElementById("enc");
-    const imagen = document.getElementById("imagen");
-    imagen.hidden = true;
+    const imagen = document.getElementById("elementos");
+    const copia = document.getElementById("copia");
+    const limpia = document.getElementById("limpia");
+    imagen.style.display = "none";
     resultado.hidden = false;
+    copia.hidden = false;
+    limpia.hidden = false;
+    resultado.value = textEnc;
 }
 
 function copiar(){
