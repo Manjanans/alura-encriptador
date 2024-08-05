@@ -215,9 +215,6 @@ footer{
     .resultado{
         height: 20vh;
     }
-    footer{
-        
-    }
 }
 
 @media (max-width: 700px){
